@@ -33,7 +33,7 @@ jobs:
       - name: Add coverage comment to the PR
         uses: marocchino/sticky-pull-request-comment@v2.8.0
         with:
-          message: ${{ steps.coverage.output.markdownReport }}
+          message: ${{ steps.coverage.outputs.markdownReport }}
       - name: Add coverage report to the job summary
         run: |
           echo "## Code Coverage v${{ matrix.node-version }}" >> "$GITHUB_STEP_SUMMARY"
